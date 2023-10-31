@@ -1,0 +1,152 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Inter', sans-serif;
+	font-size: 1.125rem;
+	height: 100vh;
+	display: -moz-grid;
+	display: -ms-grid;
+	display: grid;
+	place-items: center;
+	color: #e8e8e2;;
+}
+
+#container{
+	display: -webkit-flex;
+	display: -moz-grid;
+	display: -ms-grid;
+	display: flex;
+	width: 90%;
+	max-width: 1100px;
+	align-items: center;
+	gap: 2rem;
+}
+
+.hero img {
+	width: 380px;
+	height: 380px;
+	object-fit: cover;
+	
+}
+
+.hero img:hover,
+.hero img:focus {
+	filter: grayscale(0);
+}
+
+.author {
+	margin-bottom: 2rem;
+}
+
+.name {
+	color: #000000;
+	font-size: 900;
+	font-size: 2rem;
+}
+
+.location {
+	font-weight: 400;
+}
+
+p {
+	margin-bottom: 1rem;
+	text-align: all;
+}
+
+.links {
+	text-decoration: none;
+	transition: all 300ms ease-in-out;
+}
+
+.links:hover,
+.links:focus {
+	opacity: 0.7;
+}
+
+.description {
+	color: #000000;
+}
+
+svg {
+	width: 30px;
+	color: #e8e8e2;
+}
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #000;
+    background: #000;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #B0E0E6, #7B68EE, #556B2F, #4F4F4F, #1E90FF, #4682B4, #008B8B, #008080, #2E8B57);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+@media (max-width: 900px) {
+	#container {
+		flex-wrap: wrap;
+	}
+}
+
+@media (max-width: 400px) {
+	.hero img {
+		width: 250px;
+		width: 250px;
+	}
+}
